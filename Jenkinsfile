@@ -14,10 +14,9 @@ pipeline {
             steps{
                 echo "The responsible of this project is ${AUTHOR} and and will be deployed in ${ENVIRONMENT}"
                 //Fisrt, drop the directory if exists
-                bat 'rm -rf /home/jenkins/web'
+                bat 'rmdir /s /q C:\Jenkins\web' 
                 //Create the directory
-                bat 'mkdir /home/jenkins/web'
-                
+                bat 'mkdir C:\Jenkins\web'
             }
         }
         stage('Drop the Apache HTTPD Docker container'){
